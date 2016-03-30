@@ -1,22 +1,29 @@
 # Dockers based on Alpine Linux
 
-## Alpine Linux with glibc
+### Alpine Linux with glibc
 
-Latest, 3.3 built on alpine:3.3, glibc-2.23-r1
+`latest`, `3.3` built on `alpine:3.3`, [`glibc-2.23-r1`][glibc-2.23-r1]
 
     docker pull ventu/alpine-glibc
 
-## OpenJDK JRE (with glibc)
+### OpenJDK JRE (with glibc)
 
-Latest, 8 built on ventu/alpine-glibc:3.3
+`latest`, `8` built on `ventu/alpine-glibc:3.3`
 
     docker pull ventu/openjdk-jre
 
-## RabbitMQ
+### RabbitMQ
 
-Latest, 3.6.1 built on alpine:3.3, erlang-18.2, rabbitmq-3.6.1
+`latest`, `3.6.1` built on `alpine:3.3`, `erlang-18.2`, `rabbitmq-3.6.1`
 
     docker pull ventu/rabbitmq
 
-## Redis
+### OrientDB
 
+`latest`, `2.1.5` build on `ventu/openjdk-jre:8`, `orientdb-2.1.5`
+
+    docker pull ventu/orientdb
+
+
+
+[glibc-2.23-r1]: https://github.com/andyshinn/alpine-pkg-glibc/releases/tag/2.23-r1

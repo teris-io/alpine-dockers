@@ -1,5 +1,7 @@
 FROM alpine:3.3
 
+MAINTAINER info@ventu.io
+
 ENV GLIBC_VERSION 2.23-r1
 ENV GLIBC_SERVER https://github.com/andyshinn/alpine-pkg-glibc/releases/download 
 
