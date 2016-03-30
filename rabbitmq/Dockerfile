@@ -33,18 +33,15 @@ RUN apk add --no-cache --update curl tar xz \
         erlang-webtool=${ERLANG_VERSION} \
         erlang-xmerl=${ERLANG_VERSION}
 
-RUN mkdir /usr/local/rabbitmq && \
-    cd /usr/local/rabbitmq && \
-    curl -sSL https://www.rabbitmq.com/releases/rabbitmq-server/v${RABBITMQ_VERSION}/rabbitmq-server-generic-unix-${RABBITMQ_VERSION}.tar.xz -o rabbitmq.tar.xz && \
-    tar xf rabbitmq.tar.xz --strip-components=1 && \
-    rm rabbitmq.tar.xz && \
-    /usr/local/rabbitmq/sbin/rabbitmq-plugins enable --offline rabbitmq_event_exchange && \
-    /usr/local/rabbitmq/sbin/rabbitmq-plugins enable --offline rabbitmq_management && \
-    /usr/local/rabbitmq/sbin/rabbitmq-plugins enable --offline rabbitmq_mqtt && \
-    /usr/local/rabbitmq/sbin/rabbitmq-plugins enable --offline rabbitmq_stomp && \
-    apk del --purge tar xz && \
-    rm -rf /var/cache/apk/*
+RUN curl -sSL https://www.rabbitmq.com/releases/rabbitmq-server/v${RABBITMQ_VERSION}/rabbitmq-server-generic-unix-${RABBITMQ_VERSION}.tar.xz -o rabbitmq.tar.xz \
+ && tar xf rabbitmq.tar.xz --strip-components=1 \
+ && rabbitmq-plugins enable --offline rabbitmq_event_exchange \
+ && rabbitmq-plugins enable --offline rabbitmq_management \
+ && rabbitmq-plugins enable --offline rabbitmq_mqtt \
+ && rabbitmq-plugins enable --offline rabbitmq_stomp \
+ && apk del --purge tar xz \
+ && rm rabbitmq.tar.xz
 
 EXPOSE 5671 5672 15672 61613 1883
 
-CMD ["/usr/local/rabbitmq/sbin/rabbitmq-server"]
+CMD ["rabbitmq-server"]
