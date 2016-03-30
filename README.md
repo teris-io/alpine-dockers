@@ -14,9 +14,15 @@
 
 ### RabbitMQ
 
-`latest`, `3.6.1` built on `alpine:3.3`, `erlang-18.2`, `rabbitmq-3.6.1`
+`latest`, `3.6.1` built on `alpine:3.3`, `erlang-18.1-r5`, `rabbitmq-3.6.1`
 
     docker pull ventu/rabbitmq
+
+### Redis
+
+`latest`, `3.0.5` built on `alpine:3.3`, `redis-3.0.5-r1`
+
+    docker pull ventu/redis
 
 ### OrientDB
 
