@@ -1,9 +1,11 @@
-FROM alpine:3.3
+# published as terisco/alpine-glibc:3.6
 
-MAINTAINER info@ventu.io
+FROM alpine:3.6
 
-ENV GLIBC_VERSION 2.23-r1
-ENV GLIBC_SERVER https://github.com/andyshinn/alpine-pkg-glibc/releases/download 
+MAINTAINER oleg@sklyar.io
+
+ENV GLIBC_VERSION 2.26-r0
+ENV GLIBC_SERVER https://github.com/sgerrand/alpine-pkg-glibc/releases/download
 
 RUN apk --no-cache add curl
 

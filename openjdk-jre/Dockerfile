@@ -1,5 +1,7 @@
-FROM ventu/alpine-glibc:3.3
+# published as terisco/alpine-glibc-jre:8
 
-MAINTAINER info@ventu.io
+FROM terisco/alpine-glibc:3.6
 
-RUN apk --no-cache add openjdk7-jre
+MAINTAINER oleg@sklyar.io
+
+RUN apk --no-cache add openjdk8-jre
