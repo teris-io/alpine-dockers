@@ -7,4 +7,4 @@
 
 Java dockers are delivered with [`glibc-2.26-r0`][glibc-2.26-r0].
 
-[glibc-2.26-r0]: https://github.com/sgerrand/alpine-pkg-glibc/releases/download/tag/2.26-r0
+[glibc-2.26-r0]: https://github.com/sgerrand/alpine-pkg-glibc/releases/tag/2.26-r0
